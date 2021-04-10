@@ -3,10 +3,19 @@
 
 <head>
     <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
     <title>GrandPy Bot</title>
 </head>
 
 <body>
     <h1>GrandPy Bot</h1>
+    <p>Bienvenu chez papy robot</p>
+    <form>
+        <p>
+            <label for="userText"></label>
+            <input type="text" id="userText" placeholder="Poser votre question à GrandPy">
+            <input type="submit" value="Envoyer">
+        </p>
+    </form>
 
 </html>
