@@ -3,19 +3,44 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="icon" type="image/png" href="\static\images\logotg.png" />
     <title>GrandPy Bot</title>
 </head>
 
 <body>
-    <h1>GrandPy Bot</h1>
-    <p>Bienvenu chez papy robot</p>
-    <form>
+    <header>
+        <img src="\static\images\tortue_genial.png" id="tortueG">
+        <h1>Salut à toi Billy ! Pose moi une question et je te dirais tout ce que tu veux savoir... viens donc t'assoir prêt du feu fiston!</h1>
+        <h2>GrandPy Bot</h2>
+    </header>
+    
+    
+    
+    <form id="text_field">
         <p>
             <label for="userText"></label>
-            <input type="text" id="userText" placeholder="Poser votre question à GrandPy">
+            <input type="text" id="userText" name="userText" placeholder="Poser votre question à GrandPy">
             <input type="submit" value="Envoyer">
         </p>
     </form>
+    
 
+    <script>
+        let question = document.querySelector("#text_field")
+
+            question.addEventListener("submit", function (event) {
+                event.preventDefault();
+                console.log("Vous avez bien appuyé sur envoyer");
+
+                fetch("/ajax", {
+                    method:"POST",
+                    body: new FormData(question)
+                });
+            })
+    </script>
+    <footer>
+        <p>Auteur de l'application: Jean-Maxime GUTH (Anca6889), étudiant chez Openclassrooms code source du projet: <a href="https://github.com/Anca6889/P7_grandpy_bot">GitHub</a></p>
+    </footer>
 </html>
