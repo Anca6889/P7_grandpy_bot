@@ -1,31 +1,88 @@
-img#tortueG
-{
-    float: left;
-    width: 10em;
-	height: auto;
+#logo {
+    width: auto;
+    max-height: 200px;
+
 }
-h1
-{
-    float:inline-end;
-    text-justify: auto;
+img#tortueG {
+    float: left;
+    max-height: 150px;
+	width: auto;
+}
+
+#main_title {
+    
+    text-align: center;
+    font-size: 50%;
     font-style: italic;
     font-family:'Times New Roman', Times, serif;
     font-weight:lighter;
     color: white;
 }
-h2
-{
-    float: bottom;
-    color: white;
+
+
+#phrasing_hook {
+
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    border-bottom-left-radius: 0px;
+    background-color: white;
+    border: 1px solid black;
+    position: relative;
+    font-size: 90%;
+    font-style: italic;
     font-family:'Times New Roman', Times, serif;
-}
-body 
-{
-    background-color: rgb(133, 121, 121);
+    font-weight:lighter;
+    color: black;
 }
 
-input[type=text] 
-{
-    width: 50em;
-    height: 3em;
+#campfire {
+    display: flex;
+    align-self:flex-end;
+    width: 220px;
+    height: 220px;
+    
+}
+
+img#campfire {
+    width: 100%;
+	height: auto;
+}
+
+body {
+    background-color: rgb(247, 220, 185);
+    
+}
+
+header {
+    max-height: 250px;
+    box-sizing: border-box;
+    background-color: rgb(133, 121, 121);
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+}
+section {
+    margin: 5px;
+    width: 100%;
+    /* min-height: 550px; */
+    box-sizing:unset;
+    display: flex;
+    align-items: center;
+    
+}
+form {
+    
+    display: flex;
+    align-self:center;
+    width: 300px;
+    height: 75px;
+}
+input[type=text] {
+    width: 100%;
+    height: 100%;
+}
+
+footer {
+    position: bottom;
 }
