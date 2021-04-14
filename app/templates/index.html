@@ -24,11 +24,16 @@
         
     </header>
     
-    
-    <section>
+    <!-- chatbot-->
+    <div id= "chat_container">
+
         <div id="campfire">
             <img src="\static\images\campfire.gif" id="campfire">
         </div>
+
+        <ul> <!-- liste à puce qui contient le chat-->
+            <li class="item">Alors Billy ! Raconte moi un peu ? Tu sais j'ai beaucoup voyagé ! Et toi fiston où tu rêves d'aller ?</li>
+        </ul>
 
         <form id="text_field">
             <p>
@@ -37,24 +42,11 @@
                 <input type="submit" value="Envoyer">
             </p>
         </form>
-    </section>
-    
-    
-
-    <script>
-        alert("Grandpy se fait vieux doucement...Il ne vous reconnait plus trop bien, il vous prend pour une personne s'appelant 'Billy' et il vous appelera toujours 'fiston'... Soyez indulgent envers lui ;-)");
-        let question = document.querySelector("#text_field")
-
-            question.addEventListener("submit", function (event) {
-                event.preventDefault();
-                console.log("Vous avez bien appuyé sur envoyer");
-
-                fetch("/ajax", {
-                    method:"POST",
-                    body: new FormData(question)
-                });
-            })
-    </script>
+    </div>
+    <!-- chatbot end-->
+    <script src="https://code.jquery.com/jquery-1.12.3.js" integrity="sha256-1XMpEtA4eKXNNpXcJ1pmMPs8JV+nwLdEqwiJeCQEkyc="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="\static\js\script.js"></script>
     <footer>
         <p>Auteur de l'application: Jean-Maxime GUTH (Anca6889), étudiant chez Openclassrooms code source du projet: <a href="https://github.com/Anca6889/P7_grandpy_bot">GitHub</a></p>
     </footer>

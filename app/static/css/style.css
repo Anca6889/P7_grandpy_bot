@@ -50,7 +50,7 @@ img#campfire {
 }
 
 body {
-    background-color: rgb(247, 220, 185);
+    background-color: rgb(196, 173, 159);
     
 }
 
@@ -62,14 +62,30 @@ header {
     align-items: flex-start;
     flex-wrap: nowrap;
 }
-section {
+#chat_container {
     margin: 5px;
-    width: 100%;
-    /* min-height: 550px; */
     box-sizing:unset;
     display: flex;
-    align-items: center;
+    align-items:flex-start;
+    text-align: center;
     
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  background-color: #fff;
+  color: #000;
+  font-size: 20px;
+  list-style-type: none;
+  width: 80%;
+  margin: 0px auto;
+  border-radius: 3px;
+  border: 1px solid #000;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 form {
     
