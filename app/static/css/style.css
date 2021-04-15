@@ -65,32 +65,51 @@ header {
 #chat_container {
     margin: 5px;
     box-sizing:unset;
-    display: flex;
-    align-items:flex-start;
-    text-align: center;
-    
+    display:flex;
+
 }
 
 ul {
   padding: 0;
 }
 
-li {
-  background-color: #fff;
+.li_right {
+  background-color: rgb(201, 228, 230);
   color: #000;
   font-size: 20px;
-  list-style-type: none;
-  width: 80%;
-  margin: 0px auto;
-  border-radius: 3px;
+  list-style: none;
+  width: fit-content;
+  max-width: 60%;
+  margin: 10px auto;
+  border-radius: 15px;
+  border-bottom-right-radius: 0px;
   border: 1px solid #000;
   padding: 10px;
   margin-bottom: 10px;
+  text-align: right;
+ 
 }
+
+.li_left {
+  background-color: rgb(243, 209, 157);
+  color: #000;
+  font-size: 20px;
+  list-style: none;
+  width:fit-content;
+  max-width: 60%;
+  margin: 10px auto;;
+  border-radius: 15px;
+  border-bottom-left-radius: 0px;
+  border: 1px solid #000;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
 form {
     
     display: flex;
-    align-self:center;
+    align-items: center;
     width: 300px;
     height: 75px;
 }

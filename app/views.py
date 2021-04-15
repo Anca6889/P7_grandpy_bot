@@ -1,5 +1,6 @@
 from flask import render_template, jsonify, request
 from . import app
+from app.parser import Parser
 
 @app.route("/")
 def home():
@@ -7,6 +8,9 @@ def home():
 
 @app.route("/ajax", methods=["POST"])
 def ajax():
-    user_text = request.form["userText"] #cherche dans le name de inp
+    user_text = request.form["userText"]#cherche dans le name de input html
+    answer = user_text.upper()
     print(user_text)
-    return jsonify(["pas de réponse"])
+    parser = Parser()
+    print(parser.split_message(user_text))
+    return jsonify(answer)
