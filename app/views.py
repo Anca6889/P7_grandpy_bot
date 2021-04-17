@@ -9,7 +9,7 @@ def home():
 @app.route("/ajax", methods=["POST"])
 def ajax():
     user_text = request.form["userText"]#cherche dans le name de input html
-    parser = Parser()
+    parser = Parser(user_text)
+    parser.regex()
     answer = 'Tu as bien dit: " ' + user_text.upper() + ' " Billy ?'
-    print(user_text)
     return jsonify(answer)
