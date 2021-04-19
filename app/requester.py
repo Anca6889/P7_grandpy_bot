@@ -1,7 +1,8 @@
 """ This module is request the Google Maps & Wikipedia API's with the
 parsed message """
 
-import requests
+import requests, random
+from app.config import config as c
 
 
 class Request:
@@ -26,17 +27,30 @@ class Request:
             "srsearch": "{}".format(self.query),
             "srlimit": "1"
         }
-        request = requests.get(url, params=payload)
-        json = request.json()
-        self.get_wiki_page_id(json)
+        if self.query == []:
+            self.wiki_result = random.choice(c.GRANDPY_EMPTY)
+            
+        else:
+            try:
+                request = requests.get(url, params=payload)
+                json = request.json()
+                self.get_wiki_page_id(json)
+                
+            except ValueError:
+                self.wiki_result = random.choice(c.GRANDPY_DONT_UNDERSTAND)
 
     def get_wiki_page_id(self, json):
 
-        data = json
-        pages = data['query']['search']
-        for key, value in enumerate(pages):
-            page_id = str(value['pageid'])
-        self.second_request_wiki(page_id)
+        try:
+            data = json
+            pages = data['query']['search']
+            for key, value in enumerate(pages):
+                page_id = str(value['pageid'])
+            self.second_request_wiki(page_id)
+            
+        except UnboundLocalError:
+            self.wiki_result = random.choice(c.GRANDPY_DONT_UNDERSTAND)
+
 
     def second_request_wiki(self, page_id):
 

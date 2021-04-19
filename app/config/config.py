@@ -1,17 +1,50 @@
 """Config module, contain all the python constances of the app """
 
-GRANDPY_ANSWERS = [
-    "Sàlü, geht's?"
-    "A scheni Wihnàchte un a güeti Rutsch ins Nejes Johr"
-    "Salut Billy ! Ecoute je suis pas encore tout à fait prêt là...",
-    "Flàmmeküeche un Edelzwicker ìsch besser",
-    "Fiston, le dévellopeur qui me développe est encore entrain de bosser...",
-    "Reviens un peu plus tard Billy !",
-    "Il va falloir attendre encore un peu Billy !",
-    "Fiston, j'ai encore besoin d'un peu de temps avant de fonctionner...",
+GRANDPY_EMPTY = [
+    "Toi tu as encore bu un peu trop de bière fiston n'est ce pas ?",
+    "Pose d'abord ta canette avant de me poser ta question Billy",
+]
+GRANDPY_DONT_UNDERSTAND = [
+    " Je ne connais pas ça... cherche moi donc une autre bière Billy !",
+    " Qué que ça ? Jamais entendu... tu ne crois pas qu'il serait plus malin"
+    " de mettre la glacière directement ici à coté de nous Billy ? ",
+    " Hein ? C'est quoi ça ? Jamais rien entendu de tel, passe moi le"
+    " décapsuleur fiston!",
+    " Fiston tu connais de drôle de choses qui m'échappe... je n'ai pas "
+    "réponse à tout! ...hé HE HEEEEH tu vas ou? Tu retournes à la glacière la ?"
+]
+
+GRANDPY_KNOWS = [
+    " AHHHH ça je connais bien Billy !!! Laisse moi t'en dire un peu plus : \n",
+    " Cré vun diou, tu crois vraiment que je ne connais pas ? Attend de "
+    "découvrir ce que je vais te raconter fiston: \n",
+    " OHHOhooo je pensais pas que cela t'intéresserai Billy... alors par ou "
+    "commencer... : \n",
+    " HAHAHA Oh oui que je connais, ca me rappelle dailleurs des souvenirs : \n"
+]
+
+GRANDPY_END = [
+    "\nAlors ? t'en pense quoi Fiston ? Moi j'en pense que tu vas aller me "
+    "rechercher une bière !",
+    "\nC'est quelque chose hein ? Tu trouves pas ? Hics... Fiston...",
+    "\nSacrée histoire tout ça... Billy ? Tu écoutes encore?",
+    "\nQuand je pense à tout ce que j'ai vécu... Oyé... Billy..."
+    
 ]
 
 STOP_WORDS = [
+    "idee",
+    "quil",
+    "quelle",
+    "crois",
+    "papy",
+    "papi",
+    "papybot",
+    "grandpybot",
+    "papibot",
+    "envie",
+    "reve",
+    "daller",
     "cru",
     "mapprendre",
     "jai",
