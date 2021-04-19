@@ -10,17 +10,19 @@ class Parser:
 
         self.stopwords = c.STOP_WORDS
         self.message = message
+        self.cleaned = []
+        self.regex()
 
     def regex(self):
-        """ remove punctuation of message using regex"""
+        """ remove punctuation of message using regex """
 
         regexed = re.sub(r'[^\w\s]', '', self.message)
         print(regexed)
         self.lower_letter(regexed)
 
     def lower_letter(self, regexed):
-        """ 
-            remove capital letter of the above regexed message 
+        """
+            remove capital letter of the above regexed message
             (from above method regex)
         """
 
@@ -28,14 +30,14 @@ class Parser:
         self.remove_accent(message_low)
 
     def remove_accent(self, message_low):
-        """ 
+        """
             remove accent of the regexed lower message
             (from both above methods regex + lower_letter)
         """
 
         nk = unicodedata.normalize('NFKD', message_low)
         ascii = nk.encode('ASCII', 'ignore')
-        strascii = ascii.decode('utf-8') #convert byte data to string
+        strascii = ascii.decode('utf-8')  # convert byte data to string
         print(ascii)
         self.split_reworked_message(strascii)
 
@@ -48,10 +50,10 @@ class Parser:
 
     def check_stopwords(self, list_of_words):
         """ remove words what are in the stop_words """
-        list_clean = []
+
+        self.cleaned = []
         for word in list_of_words:
             if word not in self.stopwords:
                 print(word)
-                list_clean.append(word)
-        print(list_clean)
-                
+                self.cleaned.append(word)
+        print(self.cleaned)
