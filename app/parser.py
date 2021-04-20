@@ -16,8 +16,7 @@ class Parser:
     def regex(self):
         """ remove punctuation of message using regex """
 
-        regexed = re.sub(r'[^\w\s]', '', self.message)
-        print(regexed)
+        regexed = re.sub(r'[^\w\s]', ' ', self.message)
         self.lower_letter(regexed)
 
     def lower_letter(self, regexed):
@@ -38,7 +37,6 @@ class Parser:
         nk = unicodedata.normalize('NFKD', message_low)
         ascii = nk.encode('ASCII', 'ignore')
         strascii = ascii.decode('utf-8')  # convert byte data to string
-        print(ascii)
         self.split_reworked_message(strascii)
 
     def split_reworked_message(self, strascii):
