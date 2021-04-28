@@ -12,6 +12,8 @@ class Request:
 
         self.query = query
         self.wiki_result = None
+        self.lat = ""
+        self.lng = ""
         self.first_request_wiki()
 
     def first_request_wiki(self):
@@ -89,28 +91,14 @@ class Request:
             for k, v in pages.items():
                 coordinates = (
                     v['coordinates'][0]['lat'], v['coordinates'][0]['lon'])
-            lat = str(coordinates[0])
-            lng = str(coordinates[1])
-            strco = lat +" "+ lng
-            print(strco)
-            self.request_maps(strco)
+            self.lat = str(coordinates[0])
+            self.lng = str(coordinates[1])
+            # strco = lat +" "+ lng
+            # print(strco)
+            # self.request_maps(strco)
         except KeyError:
             pass
 
-    def request_maps(self, strco):
-        """
-        Send a request to Google Maps API with the coordinates get from 
-        wikipedia
-        """
-        url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
-        payload = {"key": "",
-                "location": strco,
-                "radius": "1500"
-                }
-        request = requests.get(url, params=payload)
-        json = request.json()
-        print(json)
-        return json
 
 
 if __name__ == '__main__':

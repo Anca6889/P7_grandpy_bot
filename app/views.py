@@ -10,9 +10,13 @@ def home():
     return render_template("index.html")
 
 @app.route("/ajax", methods=["POST"])
-def ajax():
+def send_answer():
     user_text = request.form["userText"]#cherche dans le name de input html
     parser = Parser(user_text) 
     result = Request(parser.cleaned)
+    print(result.lat, result.lng)
     answer = result.wiki_result
-    return jsonify(answer)
+    lat = result.lat
+    lng = result.lng
+    return jsonify({"answer": answer, "lat": lat, "lng": lng})
+

@@ -33,7 +33,9 @@ GRANDPY_END = [
 ]
 
 STOP_WORDS = [
-    
+    "ok",
+    "ouai",
+    "nan",
     "idee",
     "crois",
     "papy",
