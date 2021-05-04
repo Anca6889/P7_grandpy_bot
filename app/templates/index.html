@@ -5,77 +5,74 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/static/css/style.css">
-    <link rel="icon" type="image/png" href="\static\images\logotg.png" />
+    <link rel="icon" type="image/png" href="/static/images/logotg.png" />
     <title>GrandPy Bot</title>
 </head>
 
 <body>
-
     <header>
         <div id="main_title">
             <div id=logo>
-                <img src="\static\images\tortue_genial.png" id="tortueG">
+                <img src="/static/images/tortue_genial.png" id="tortueG">
                 <h1>GrandPy Bot</h1>
             </div>
         </div>
-
         <div id="phrasing_hook">
             <h2>Salut à toi Billy ! Viens donc t'assoir prêt du feu fiston! Et au passage ramène deux bières! Elles sont
                 dans la glacière juste à tes pieds!</h2>
         </div>
-
     </header>
+    <div class="page">
+        <!-- chatbot-->
+        <div id="chat_container">
+            <ul>
+                <li class="li_left">
+                    Alors Billy ! Raconte moi un peu ? Tu sais j'ai beaucoup voyagé! Et toi fiston où tu rêves d'aller ?
 
-
-    <!-- chatbot-->
-    <div id="chat_container">
-        <ul>
-            <li class="li_left">
-                Alors Billy ! Raconte moi un peu ? Tu sais j'ai beaucoup voyagé! Et toi fiston où tu rêves d'aller ?
-                <br>
-                <img src="\static\images\logotg.png" id="GrandPy"> <br>
-            </li>
-
-        </ul>
-
-    </div>
-    <!-- chatbot end-->
-
-    <div id="campfire_container">
-
-        <div id="tgsitting">
-            <img src="\static\images\tgsitting.png" id="tgsitting">
+                    <br>
+                    <img src="/static/images/logotg.png" id="GrandPy">
+                    <br>
+                </li>
+            </ul>
         </div>
-
-        <div id="campfire">
-            <img src="\static\images\campfire.gif" id="campfire">
+        <!-- chatbot end-->
+        <div id="campfire_container">
+            <div id="tgsitting">
+                <img src="/static/images/tgsitting.png" id="tgsitting">
+            </div>
+            <div id="campfire">
+                <img src="/static/images/campfire.gif" id="campfire">
+            </div>
         </div>
-
+        <form id="text_field">
+            <p>
+                <label for="userText"></label>
+                <input type="text" id="userText" name="userText" placeholder="Poser votre question à GrandPy">
+                <input type="submit" value="Envoyer">
+            </p>
+        </form>
     </div>
-
-    <form id="text_field">
-        <p>
-            <label for="userText"></label>
-            <input type="text" id="userText" name="userText" placeholder="Poser votre question à GrandPy">
-            <input type="submit" value="Envoyer">
-        </p>
-    </form>
-
     <footer>
-        <p>Auteur de l'application: Jean-Maxime GUTH (Anca6889), <br> Etudiant chez Openclassrooms, parcours développeur
-            d'application Python <br> code source du projet:
+        <p>Auteur de l'application: Jean-Maxime GUTH (Anca6889),
+            <br> Etudiant chez Openclassrooms, parcours développeur
+            d'application Python
+            <br> code source du projet:
+
             <a href="https://github.com/Anca6889/P7_grandpy_bot">
-                <img alt="text alternatif pour le lien image" src="\static\images\github_PNG15.png" width="auto"
+                <img alt="text alternatif pour le lien image" src="/static/images/github_PNG15.png" width="auto"
                     height="35" />
+            </a> &emsp;
+            <a href="https://www.linkedin.com/in/jean-maxime-guth-949212a8/">
+                <img alt="text alternatif pour le lien image" src="/static/images/linkedin.png" width="auto" height="30" />
             </a>
         </p>
     </footer>
-
     <script src="https://code.jquery.com/jquery-1.12.3.js"
         integrity="sha256-1XMpEtA4eKXNNpXcJ1pmMPs8JV+nwLdEqwiJeCQEkyc=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="\static\js\script.js"></script>
+    <script type="text/javascript" src="/static/js/script.js"></script>
     <script
         src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=&v=weekly"
         async></script>
+</body>
 
 </html>

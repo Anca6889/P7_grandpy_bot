@@ -14,19 +14,13 @@ function getMessage(url, data) {
 var map = null;
 
 function initMap(lat, lng, i) {
-    map = new google.maps.Map(document.getElementById("map"+i), {
+    map = new google.maps.Map(document.getElementById("map" + i), {
         center: new google.maps.LatLng(lat, lng),
-        zoom: 11,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        mapTypeControl: true,
-        scrollwheel: false,
-        mapTypeControlOptions: {
-            style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR
-        },
-        navigationControl: true,
-        navigationControlOptions: {
-            style: google.maps.NavigationControlStyle.ZOOM_PAN
-        }
+        zoom: 12,
+    });
+    marker = new google.maps.Marker({
+        position: map.getCenter(),
+        map: map
     });
 }
 
@@ -42,12 +36,18 @@ $(function () {
         e.preventDefault();
         getMessage("/ajax", new FormData(text_field))
             .then(response => {
-                $list.append('<li class="li_left"><div class="map" id="map'+i+'"></div>' + response.answer +'<br> <img src="/static/images/logotg.png" id="GrandPy"> <br> </li >');
-                initMap(parseFloat(response.lat), parseFloat(response.lng), i);
+                $("#loader").remove();
+                if (response.lat === "") {
+                    $list.append('<li class="li_left">' + response.answer + '<br> <img src="/static/images/logotg.png" id="GrandPy"> <br> </li >');
+                } else {
+                    $list.append('<li class="li_left"><div class="map" id="map' + i + '"></div>' + response.answer + '<br> <img src="/static/images/logotg.png" id="GrandPy"> <br> Regarde donc la carte ci-dessus Billy ! Ca se trouve juste là ! </li >');
+                    initMap(parseFloat(response.lat), parseFloat(response.lng), i);
+                }
             })
         var text = $('input:text').val();
         $list.append('<li class="li_right">' + text + '</li > ');
-        
+        $list.append('<div id = "loader"><li class="li_left"><img src="/static/images/loader.jpg" id="Loader"> <br> <img src="/static/images/logotg.png" id="GrandPy"> <br> </li ></div>')
+
         $('input:text').val('');
         i++
     });

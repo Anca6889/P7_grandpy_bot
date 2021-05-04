@@ -1,174 +1,158 @@
-#logo {
-    width: auto;
-    max-height: 200px;
-
-}
-img#tortueG {
-    float: left;
-    max-height: 150px;
-	width: auto;
-}
-
-#main_title {
-    
-    text-align: center;
-    font-size: 50%;
-    font-style: italic;
-    font-family:'Times New Roman', Times, serif;
-    font-weight:lighter;
-    color: white;
-}
-
-
-.map {
-  height: 300px;
-  width:100%;
-  border-radius: 15px;
-}
-
-#phrasing_hook {
-
-    margin: 10px;
-    padding: 5px;
-    border-radius: 10px;
-    border-bottom-left-radius: 0px;
-    background-color: white;
-    border: 1px solid black;
-    position: relative;
-    font-size: 90%;
-    font-style: italic;
-    font-family:'Times New Roman', Times, serif;
-    font-weight:lighter;
-    color: black;
-}
-#campfire_container {
-
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap;
-}
-
-#campfire {
-    
-    width: 150px;
-    height: 150px;
-    align-self: flex-start;
-}
-
-img#campfire {
-
-    width: auto;
-	height: 150px;
-    align-self: flex-start;
-}
-
-#tgsitting {
-
-    
-    width: 150px;
-    height: 150px;
-    
-}
-
-img#tgsitting {
-    image-orientation: flip;
-    width: auto;
-	height: 150px;
-}
-
-#GrandPy {
-    position: absolute; top:5px; left: 5px;
-    width: 40px;
-    height: auto;
-    
-}
-
-img#Grandpy{
-
-    width: 100%;
-	height: auto;
-    
-}
-
-body {
-    background-color: #1b1847;
-    background-image: url(/static/images/retrobeach.jpg);
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: auto;
-
-}
-
 header {
-    max-height: 250px;
-    background-color: rgba(196, 196, 196, 0.493);
-    border-radius: 10px;
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: nowrap;
+     max-height: 250px;
+     background-color: rgba(196, 196, 196, 0.493);
+     display: flex;
+     align-items: flex-start;
+     flex-wrap: nowrap;
 }
-#chat_container {
-    margin: 5px;
-    box-sizing:unset;
-    display:flex;
-
+ body {
+     margin: 0;
+     display: flex;
+     flex-direction: column;
+     min-height: 100vh;
+     background-color: #1b1847;
+     background-image: url(/static/images/retrobeach.jpg);
+     background-position: bottom;
+     background-repeat: no-repeat;
+     background-size: auto;
 }
-
-ul {
-  padding: 0;
+ .page {
+     flex: 1;
+     display: flex;
+     flex-direction: column;
 }
-
-.li_left {
-  position: relative;
-  background-color:rgb(255, 185, 93) ;
-  color: #000;
-  font-size: 20px;
-  list-style: none;
-  width: fit-content;
-  max-width: 60%;
-  margin: 10px auto;
-  border-radius: 15px;
-  border-bottom-left-radius: 0px;
-  border: 1px solid #000;
-  padding: 10px;
-  margin-bottom: 10px;
-  text-align: left;
-  padding-left: 60px;
-
+ #logo {
+     width: auto;
+     max-height: 200px;
 }
-
-.li_right {
-  background-color: rgb(195, 222, 235);
-  color: #000;
-  font-size: 20px;
-  list-style: none;
-  width:fit-content;
-  max-width: 60%;
-  margin: 10px auto;;
-  border-radius: 15px;
-  border-bottom-right-radius: 0px;
-  border: 1px solid #000;
-  padding: 10px;
-  margin-bottom: 10px;
-  text-align: left;
+ img#tortueG {
+     float: left;
+     max-height: 150px;
+     width: auto;
 }
-
-form {
-    
-    display: flex;
-    align-items: center;
-    width: 330px;
-    height: 75px;
+ #main_title {
+     text-align: center;
+     font-size: 50%;
+     font-style: italic;
+     font-family: 'Times New Roman', Times, serif;
+     font-weight: lighter;
+     color: white;
 }
-input[type=text] {
-    width: 330px;
-    height: 40px;
+ .map {
+     height: 300px;
+     width: 100%;
+     border-radius: 15px;
 }
-
-footer {
-    position: bottom;
-    color: white;
-    background-color: rgba(196, 196, 196, 0.493);;
-    border-radius: 10px; 
-    padding: 3px;
+ #phrasing_hook {
+     margin: 10px;
+     padding: 5px;
+     border-radius: 10px;
+     border-bottom-left-radius: 0px;
+     background-color: white;
+     border: 1px solid black;
+     position: relative;
+     font-size: 90%;
+     font-style: italic;
+     font-family: 'Times New Roman', Times, serif;
+     font-weight: lighter;
+     color: black;
+}
+ #campfire_container {
+     display: flex;
+     align-items: center;
+     flex-wrap: nowrap;
+}
+ #campfire {
+     width: 150px;
+     height: 150px;
+     align-self: flex-start;
+}
+ img#campfire {
+     width: auto;
+     height: 150px;
+     align-self: flex-start;
+}
+ #tgsitting {
+     width: 150px;
+     height: 150px;
+}
+ img#tgsitting {
+     image-orientation: flip;
+     width: auto;
+     height: 150px;
+}
+ #GrandPy {
+     position: absolute;
+     top: 5px;
+     left: 5px;
+     width: 40px;
+     height: auto;
+}
+ #Loader {
+     position: relative;
+     top: 5px;
+     right: 5px;
+     width: 40px;
+     height: auto;
+}
+ img#Grandpy {
+     width: 100%;
+     height: auto;
+}
+ #chat_container {
+     flex: 1;
+     margin: 5px;
+     box-sizing: unset;
+     display: flex;
+}
+ ul {
+     padding: 0;
+}
+ .li_left {
+     position: relative;
+     background-color: rgb(255, 185, 93);
+     color: #000;
+     font-size: 20px;
+     list-style: none;
+     width: fit-content;
+     max-width: 60%;
+     margin: 10px auto;
+     border-radius: 15px;
+     border-bottom-left-radius: 0px;
+     border: 1px solid #000;
+     padding: 10px;
+     margin-bottom: 10px;
+     text-align: left;
+     padding-left: 60px;
+}
+ .li_right {
+     background-color: rgb(195, 222, 235);
+     color: #000;
+     font-size: 20px;
+     list-style: none;
+     width: fit-content;
+     max-width: 60%;
+     margin: 10px auto;
+     ;
+     border-radius: 15px;
+     border-bottom-right-radius: 0px;
+     border: 1px solid #000;
+     padding: 10px;
+     margin-bottom: 10px;
+     text-align: left;
+}
+ form {
+     display: flex;
+     align-items: center;
+     width: 330px;
+     height: 75px;
+}
+ input[type=text] {
+     width: 330px;
+     height: 40px;
+}
+ footer {
+     color: white;
+     background-color: rgba(196, 196, 196, 0.493);
+     text-align: center;
 }

@@ -18,6 +18,7 @@ class Parser:
 
         regexed = re.sub(r'[^\w\s]', ' ', self.message)
         self.lower_letter(regexed)
+        return regexed
 
     def lower_letter(self, regexed):
         """
@@ -27,6 +28,7 @@ class Parser:
 
         message_low = regexed.lower()
         self.remove_accent(message_low)
+        return message_low
 
     def remove_accent(self, message_low):
         """
@@ -38,13 +40,14 @@ class Parser:
         ascii = nk.encode('ASCII', 'ignore')
         strascii = ascii.decode('utf-8')  # convert byte data to string
         self.split_reworked_message(strascii)
+        return strascii
 
     def split_reworked_message(self, strascii):
         """ split each word of the message reworked """
 
         list_of_words = strascii.split()
-        print(list_of_words)
         self.check_stopwords(list_of_words)
+        return list_of_words
 
     def check_stopwords(self, list_of_words):
         """ remove words what are in the stop_words """
@@ -54,4 +57,4 @@ class Parser:
             if word not in self.stopwords:
                 print(word)
                 self.cleaned.append(word)
-        print(self.cleaned)
+        return self.cleaned

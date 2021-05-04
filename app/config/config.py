@@ -33,11 +33,13 @@ GRANDPY_END = [
 ]
 
 STOP_WORDS = [
-    "ok",
+    "ok", ############# Personnal words adding BEGIN ##########################
     "ouai",
     "nan",
     "idee",
     "crois",
+    "trouve"
+    "situe",
     "papy",
     "papi",
     "papybot",
@@ -69,12 +71,13 @@ STOP_WORDS = [
     "voyager",
     "bateau",
     "veux",
-    "jaimerai",
+    "aimerai",
     "visiter",
+    "hello",
     "salut",
     "grandpy",
     "voudrais",
-    "aller",
+    "aller",  ############ Personnal words adding END #########################
     "a",
     "abord",
     "absolument",
