@@ -6,19 +6,21 @@ import unicodedata
 class Parser:
     """ This class is parsing the message of the user """
 
-    def __init__(self, message):
+    def __init__(self, message = None):
 
         self.stopwords = c.STOP_WORDS
         self.message = message
         self.cleaned = []
-        self.regex()
+        if message is not None:
+            self.regex()
 
     def regex(self):
         """ remove punctuation of message using regex """
 
-        regexed = re.sub(r'[^\w\s]', ' ', self.message)
-        self.lower_letter(regexed)
-        return regexed
+        first_regexed = re.sub(r'[^\w\s]', ' ', self.message)
+        final_regexed = re.sub(r'\_', ' ', first_regexed)
+        self.lower_letter(final_regexed)
+        return final_regexed
 
     def lower_letter(self, regexed):
         """

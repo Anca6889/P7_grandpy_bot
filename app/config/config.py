@@ -35,6 +35,7 @@ GRANDPY_END = [
 STOP_WORDS = [
     "ok", ############# Personnal words adding BEGIN ##########################
     "ouai",
+    "sais",
     "nan",
     "idee",
     "crois",
@@ -49,6 +50,7 @@ STOP_WORDS = [
     "envie",
     "reve",
     "cru",
+    "pepe",
     "apprendre",
     "faire",
     "essayer",

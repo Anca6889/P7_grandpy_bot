@@ -57,12 +57,12 @@ header {
      font-weight: lighter;
      color: black;
 }
- #campfire_container {
+ #tgsitting-campfire_container {
      display: flex;
      align-items: center;
      flex-wrap: nowrap;
 }
- #campfire {
+ #campfire-bloc {
      width: 150px;
      height: 150px;
      align-self: flex-start;
@@ -72,7 +72,7 @@ header {
      height: 150px;
      align-self: flex-start;
 }
- #tgsitting {
+ #tgsitting-bloc {
      width: 150px;
      height: 150px;
 }
