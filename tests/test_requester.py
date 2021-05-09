@@ -121,25 +121,27 @@ def test_unit_second_request_wiki_method(monkeypatch):
     def mock_get_wiki_coordinates(self, *args, **kwargs):
         pass
 
-    def mock_random_choice(*args, **kwargs):
-        return "fake random"
-
     monkeypatch.setattr(
         "app.requester.Request.get_wiki_coordinates", mock_get_wiki_coordinates)
     monkeypatch.setattr(
         "app.requester.Request.get_wiki_text", mock_get_wiki_text)
     monkeypatch.setattr("app.requester.requests.get", mock_get)
-    monkeypatch.setattr("app.requester.random.choice", mock_random_choice)
 
     result = test.second_request_wiki("10052634")
     assert result['query']['search'][0]['title'] == "La La Land (film)"
 
 
 def test_unit_get_wiki_text(monkeypatch):
+    
+    def mock_random_choice(*args, **kwargs):
+        return " fake random "
+
+    monkeypatch.setattr("app.requester.random.choice", mock_random_choice)
     test = requester.Request("fake 200 valid query")
 
     mock_json = MockResponse("fake valid response").json()
     result = test.get_wiki_text(mock_json)
-    assert result == "what"
+    assert result == [
+        ' fake random a nice and short fake text for testing fake random ']
 
 #TROUVER UN MOYEN DE MOCKER RANDOM.CHOICE
