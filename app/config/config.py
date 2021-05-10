@@ -1,4 +1,7 @@
 """Config module, contain all the python constances of the app """
+import os
+
+API_KEY = os.environ['API-KEY']
 
 GRANDPY_EMPTY = [
     "Toi tu as encore bu un peu trop de bière fiston n'est ce pas ?",
