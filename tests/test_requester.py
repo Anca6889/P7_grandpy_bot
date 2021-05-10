@@ -30,11 +30,11 @@ class MockResponse:
                         }
                     ],
                     "pages": {
-                        "10052634" : {
-                        "extract": "a nice and short fake text for testing"
+                        "10052634": {
+                            "extract": "a nice and short fake text for testing",
+                            "coordinates": [{'lat': 47.749481, 'lon': 7.33994}]}
                     },
                 },
-            },
             }
 
     def json(self):
@@ -98,11 +98,15 @@ def test_unit_first_request_wiki_method_if_there_is_value_error(monkeypatch):
 def test_unit_get_wiki_page_id_if_valid_json(monkeypatch):
     test = requester.Request("fake 200 valid query")
 
+    def mock_get(*args, **kwargs):
+        return MockResponse("fake response")
+
     def mock_second_request_wiki(self, *args, **kwargs):
         pass
 
     monkeypatch.setattr(
         "app.requester.Request.second_request_wiki", mock_second_request_wiki)
+    monkeypatch.setattr("app.requester.requests.get", mock_get)
 
     mock_json = MockResponse("fake valid response").json()
     result = test.get_wiki_page_id(mock_json)
@@ -132,16 +136,31 @@ def test_unit_second_request_wiki_method(monkeypatch):
 
 
 def test_unit_get_wiki_text(monkeypatch):
-    
+    test = requester.Request("fake 200 valid query")
+
+    def mock_get(*args, **kwargs):
+        return MockResponse("fake response")
+
     def mock_random_choice(*args, **kwargs):
         return " fake random "
 
     monkeypatch.setattr("app.requester.random.choice", mock_random_choice)
-    test = requester.Request("fake 200 valid query")
+    monkeypatch.setattr("app.requester.requests.get", mock_get)
 
     mock_json = MockResponse("fake valid response").json()
     result = test.get_wiki_text(mock_json)
     assert result == [
         ' fake random a nice and short fake text for testing fake random ']
 
-#TROUVER UN MOYEN DE MOCKER RANDOM.CHOICE
+
+def test_unit_get_wiki_coordinates(monkeypatch):
+    test = requester.Request("fake 200 valid query")
+
+    def mock_get(*args, **kwargs):
+        return MockResponse("fake response")
+
+    monkeypatch.setattr("app.requester.requests.get", mock_get)
+
+    mock_json = MockResponse("fake valid response").json()
+    result = test.get_wiki_coordinates(mock_json)
+    assert result == ('47.749481', '7.33994')

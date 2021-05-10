@@ -9,6 +9,8 @@ flask = "*"
 [dev-packages]
 pytest = "*"
 flake8 = "*"
+flask-testing = "*"
+blinker = "*"
 
 [requires]
 python_version = "3.9"
