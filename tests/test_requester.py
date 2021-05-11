@@ -1,16 +1,18 @@
+""" this module will test the requester.py module using pytest """
 from app import requester
 from app.config import config as c
 
 
 class MockResponse:
+    """
+    this class will create a fake json for mocking the requests.get
+    method
+    """
 
     def __init__(self, json=None):
 
         if json is None:
             raise ValueError
-
-        elif json == "KeyError":
-            raise KeyError
 
         else:
             self.fake_json = {
@@ -31,8 +33,8 @@ class MockResponse:
                     ],
                     "pages": {
                         "10052634": {
-                            "extract": "a nice and short fake text for testing",
-                            "coordinates": [{'lat': 47.749481, 'lon': 7.33994}]}
+                            "extract": "a nice short fake text for testing",
+                            "coordinates": [{'lat': 47.74948, 'lon': 7.3399}]}
                     },
                 },
             }
@@ -42,6 +44,12 @@ class MockResponse:
 
 
 def test_unit_first_request_wiki_method_if_there_is_a_query(monkeypatch):
+    """
+    this method will test the first method of the chain with mocking the
+    __init__ of the class, the requests.get and the next method considering
+    a valid query
+    """
+
     test = requester.Request("fake 200 valid query")
 
     def mock_init(self, query):
@@ -63,6 +71,11 @@ def test_unit_first_request_wiki_method_if_there_is_a_query(monkeypatch):
 
 
 def test_unit_first_request_wiki_method_if_there_is_no_query(monkeypatch):
+    """
+    this method will test the first method of the chain with mocking the
+    __init__ of the class considering a empty query
+    """
+
     test = requester.Request([])
 
     def mock_init(self, query):
@@ -75,6 +88,12 @@ def test_unit_first_request_wiki_method_if_there_is_no_query(monkeypatch):
 
 
 def test_unit_first_request_wiki_method_if_there_is_value_error(monkeypatch):
+    """
+    this method will test the first method of the chain with mocking the
+    __init__ of the class,the requests.get and the next method considering
+    a unvalid query
+    """
+
     test = requester.Request("fake 404 failed query")
 
     def mock_init(self, query):
@@ -96,6 +115,10 @@ def test_unit_first_request_wiki_method_if_there_is_value_error(monkeypatch):
 
 
 def test_unit_get_wiki_page_id_if_valid_json(monkeypatch):
+    """
+    this method will test the second method of the chain with mocking the
+    requests.get and the next method considering a valid query
+    """
     test = requester.Request("fake 200 valid query")
 
     def mock_get(*args, **kwargs):
@@ -114,6 +137,10 @@ def test_unit_get_wiki_page_id_if_valid_json(monkeypatch):
 
 
 def test_unit_second_request_wiki_method(monkeypatch):
+    """
+    this method will test the third method of the chain with mocking the
+    requests.get and the two next method considering a valid query
+    """
     test = requester.Request("fake 200 valid query")
 
     def mock_get(*args, **kwargs):
@@ -126,7 +153,8 @@ def test_unit_second_request_wiki_method(monkeypatch):
         pass
 
     monkeypatch.setattr(
-        "app.requester.Request.get_wiki_coordinates", mock_get_wiki_coordinates)
+        "app.requester.Request.get_wiki_coordinates",
+        mock_get_wiki_coordinates)
     monkeypatch.setattr(
         "app.requester.Request.get_wiki_text", mock_get_wiki_text)
     monkeypatch.setattr("app.requester.requests.get", mock_get)
@@ -136,6 +164,10 @@ def test_unit_second_request_wiki_method(monkeypatch):
 
 
 def test_unit_get_wiki_text(monkeypatch):
+    """
+    this method will test the fourth method of the chain with mocking the
+    requests.get and the random.choice to provide a stable answer.
+    """
     test = requester.Request("fake 200 valid query")
 
     def mock_get(*args, **kwargs):
@@ -150,10 +182,14 @@ def test_unit_get_wiki_text(monkeypatch):
     mock_json = MockResponse("fake valid response").json()
     result = test.get_wiki_text(mock_json)
     assert result == [
-        ' fake random a nice and short fake text for testing fake random ']
+        ' fake random a nice short fake text for testing fake random ']
 
 
 def test_unit_get_wiki_coordinates(monkeypatch):
+    """
+    this method will test the fifth method of the chain with mocking the
+    requests.get to get the latitude and longitude
+    """
     test = requester.Request("fake 200 valid query")
 
     def mock_get(*args, **kwargs):
@@ -163,4 +199,4 @@ def test_unit_get_wiki_coordinates(monkeypatch):
 
     mock_json = MockResponse("fake valid response").json()
     result = test.get_wiki_coordinates(mock_json)
-    assert result == ('47.749481', '7.33994')
+    assert result == ('47.74948', '7.3399')

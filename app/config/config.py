@@ -1,42 +1,53 @@
 """Config module, contain all the python constances of the app """
-import os
+# import os
 
-API_KEY = os.environ['API-KEY']
-
+# API_KEY = os.environ['API-KEY']
 GRANDPY_EMPTY = [
-    "Toi tu as encore bu un peu trop de bière fiston n'est ce pas ?",
+    "Tu as dis quelque chose fiston?",
+    "J'ai cru un instant que tu allais dire quelque chose...héhéhé...",
     "Pose d'abord ta canette avant de me poser ta question Billy",
+    "Tu as raison fiston, parfois le silence est la meilleure chose "
+    "qui soit... tralalalilalou..tatitaaa...",
+    "Attends Billy mes appareils doivent être mal réglés. VA Y "
+    "RÉPÈTE POUR VOIR ??? TU AS DIS QUELQUE CHOSE LA ????? BILLY ?"
 ]
 GRANDPY_DONT_UNDERSTAND = [
-    " Je ne connais pas ça... cherche moi donc une autre bière Billy !",
-    " Qué que ça ? Jamais entendu... tu ne crois pas qu'il serait plus malin"
-    " de mettre la glacière directement ici à coté de nous Billy ? ",
-    " Hein ? C'est quoi ça ? Jamais rien entendu de tel, passe moi le"
+    "Je ne connais pas ça..... Mais je t'ai déjà raconté le jour où j'ai \n"
+    "rencontré Granmy bot? HAHAHA C'était un sacré jour ça! C'était chaud \n"
+    "comme... Ah... ça ne t'intéresse pas ? Bon soit... fiston...",
+    "Qué que ça ? Jamais entendu... tu ne crois pas qu'il serait plus malin \n"
+    " de mettre les bûches directement ici à côté de nous Billy ? ",
+    "Hein ? C'est quoi ça ? Jamais rien entendu de tel, passe moi le \n"
     " décapsuleur fiston!",
-    " Fiston tu connais de drôle de choses qui m'échappe... je n'ai pas "
-    "réponse à tout! ...hé HE HEEEEH tu vas ou? Tu retournes à la glacière la ?"
+    "Fiston, tu connais de drôle de choses... je n'ai pas réponse à tout !"
 ]
 
 GRANDPY_KNOWS = [
-    " AHHHH ça je connais bien Billy !!! Laisse moi t'en dire un peu plus : \n",
-    " Cré vun diou, tu crois vraiment que je ne connais pas ? Attend de "
-    "découvrir ce que je vais te raconter fiston: \n",
-    " OHHOhooo je pensais pas que cela t'intéresserai Billy... alors par ou "
-    "commencer... : \n",
-    " HAHAHA Oh oui que je connais, ca me rappelle dailleurs des souvenirs : \n"
+    "AHHHH ça je connais bien Billy !!! Laisse moi t'en dire un peu plus : ",
+    "Cré vun diou, tu crois vraiment que je ne connais pas ? Attend de "
+    "découvrir ce que je vais te raconter fiston: ",
+    " OHHOhooo je pensais pas que cela t'intéresse Billy... alors par ou "
+    "commencer... : ",
+    "HAHAHA Oh oui que je connais, ca me rappelle d'ailleurs des souvenirs : "
 ]
 
 GRANDPY_END = [
-    "\nAlors ? t'en pense quoi Fiston ? Moi j'en pense que tu vas aller me "
-    "rechercher une bière !",
-    "\nC'est quelque chose hein ? Tu trouves pas ? Hics... Fiston...",
-    "\nSacrée histoire tout ça... Billy ? Tu écoutes encore?",
-    "\nQuand je pense à tout ce que j'ai vécu... Oyé... Billy..."
-    
+    "\n Alors ? t'en pense quoi Fiston ? Ça me rappelle ce jour où j'ai \n "
+    " vu Granmy pour la première fois. Je me souviens que... quoi tu as une \n"
+    " autre question ?",
+    "\n C'est quelque chose hein ? Tu trouves pas ? Tiens ça me rappelle \n"
+    " quand j'était encore jeune lieutenant-bot, je venais d'être rapatrié \n"
+    " du Estbotland, c'était tout juste après la grande guerre des bots...\n"
+    "ah bon ? Je t'ai déjà raconté cette histoire plus de cinquante fois?",
+    "\n Sacrée histoire tout ça... Billy ? Tu écoutes encore?",
+    "\n Quand je pense à tout ce que j'ai vécu... Oyé... Billy...",
+    "\n Hahaha il en connait des choses grandpy hein fiston? Tiens ça me \n "
+    " fait penser à ce jour où je pilotais mon spitbotfire au-dessus de \n"
+    " la mer data...Ah tu connais déjà cette histoire ?"
 ]
 
 STOP_WORDS = [
-    "ok", ############# Personnal words adding BEGIN ##########################
+    "ok",   # Personnal words adding BEGIN ##########################
     "ouai",
     "sais",
     "nan",
@@ -82,7 +93,7 @@ STOP_WORDS = [
     "salut",
     "grandpy",
     "voudrais",
-    "aller",  ############ Personnal words adding END #########################
+    "aller",  # Personnal words adding END #########################
     "a",
     "abord",
     "absolument",

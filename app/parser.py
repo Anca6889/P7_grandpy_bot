@@ -1,3 +1,5 @@
+""" This module will parse the user message to Grandpy """
+
 from app.config import config as c
 import re
 import unicodedata
@@ -6,7 +8,7 @@ import unicodedata
 class Parser:
     """ This class is parsing the message of the user """
 
-    def __init__(self, message = None):
+    def __init__(self, message=None):
 
         self.stopwords = c.STOP_WORDS
         self.message = message
