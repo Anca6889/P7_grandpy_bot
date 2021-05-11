@@ -2,7 +2,7 @@
 # import os
 import os
 
-API_KEY = os.getenv('API_KEY')
+API_KEY = os.environ['API_KEY']
 
 # API_KEY = os.environ['API-KEY']
 GRANDPY_EMPTY = [
