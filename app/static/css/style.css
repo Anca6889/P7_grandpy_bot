@@ -172,15 +172,15 @@ h2 {
 
 @media screen and (max-width: 500px){
 h2 {
-    font-size: 1em;
+    font-size: 1em !important;
   }
 
 .li_right{
-     font-size: 0.8em;
+     font-size: 0.8em !important;
 }
 .li_left{
-     font-size: 0.8em;
-     padding-left: 35px;
+     font-size: 0.8em !important;
+     padding-left: 35px !important;
 }
 #GrandPy {
      position: absolute;
