@@ -1,5 +1,8 @@
 """Config module, contain all the python constances of the app """
 # import os
+import os
+
+API_KEY = os.getenv('API_KEY')
 
 # API_KEY = os.environ['API-KEY']
 GRANDPY_EMPTY = [
@@ -43,7 +46,7 @@ GRANDPY_END = [
     "\n Quand je pense à tout ce que j'ai vécu... Oyé... Billy...",
     "\n Hahaha il en connait des choses grandpy hein fiston? Tiens ça me \n "
     " fait penser à ce jour où je pilotais mon spitbotfire au-dessus de \n"
-    " la mer data...Ah tu connais déjà cette histoire ?"
+    " la data-sea...Ah tu connais déjà cette histoire ?"
 ]
 
 STOP_WORDS = [
