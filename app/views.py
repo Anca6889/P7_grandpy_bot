@@ -4,12 +4,13 @@ from flask import render_template, jsonify, request
 from . import app
 from app.parser import Parser
 from app.requester import Request
-from app.config import API_KEY
+from app.config import config as c
 
+api_key = c.API_KEY
 
 @app.route("/")
 def home():
-    return render_template("index.html", key = API_KEY )
+    return render_template("index.html", key = api_key )
 
 
 @app.route("/ajax", methods=["POST"])
