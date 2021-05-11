@@ -15,7 +15,6 @@ header {
      background-position: bottom;
      background-repeat: no-repeat;
      background-size: auto;
-     font-size: 100%;
 }
  .page {
      flex: 1;
@@ -157,8 +156,6 @@ header {
      background-color: rgba(196, 196, 196, 0.493);
      text-align: center;
 }
-
-
 
 @media screen and (max-width: 720px) {
 h2 {
