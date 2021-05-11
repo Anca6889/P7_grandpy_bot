@@ -157,7 +157,7 @@ header {
      text-align: center;
 }
 
-@media  (max-width: 720px) {
+@media screen and (max-width: 720px) {
 h2 {
     font-size: 1.5em;
   }
@@ -170,7 +170,7 @@ h2 {
 }
 }
 
-@media (max-width: 500px){
+@media screen and (max-width: 500px){
 h2 {
     font-size: 1em;
   }
