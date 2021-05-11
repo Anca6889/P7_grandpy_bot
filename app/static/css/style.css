@@ -156,45 +156,44 @@ header {
      background-color: rgba(196, 196, 196, 0.493);
      text-align: center;
 }
-/* Regarde je rajoute une connerie juste pour voir  */
 
 @media screen and (max-width: 720px) {
-h2 {
+  h2 {
     font-size: 1.5em;
   }
-  
-.li_right{
-     font-size: 1em;
-}
-.li_left{
-     font-size: 1em;
-}
+
+  .li_right {
+    font-size: 1em;
+  }
+  .li_left {
+    font-size: 1em;
+  }
 }
 
-@media screen and (max-width: 500px){
-h2 {
+@media screen and (max-width: 500px) {
+  h2 {
     font-size: 1em !important;
   }
 
-.li_right{
-     font-size: 0.8em !important;
-}
-.li_left{
-     font-size: 0.8em !important;
-     padding-left: 35px !important;
-}
-#GrandPy {
-     position: absolute;
-     top: 3px;
-     left: 3px;
-     width: 30px;
-     height: auto;
-}
-#Loader {
-     position: relative;
-     top: 3px;
-     right: 3px;
-     width: 30px;
-     height: auto;
-}
+  .li_right {
+    font-size: 0.8em !important;
+  }
+  .li_left {
+    font-size: 0.8em !important;
+    padding-left: 35px !important;
+  }
+  #GrandPy {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 30px;
+    height: auto;
+  }
+  #Loader {
+    position: relative;
+    top: 3px;
+    right: 3px;
+    width: 30px;
+    height: auto;
+  }
 }
