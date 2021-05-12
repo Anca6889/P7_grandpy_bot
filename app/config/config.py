@@ -1,5 +1,5 @@
 """Config module, contain all the python constances of the app """
-# import os
+
 import os
 
 API_KEY = os.environ['API_KEY']

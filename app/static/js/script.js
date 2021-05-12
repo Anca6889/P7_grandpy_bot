@@ -10,7 +10,6 @@ function getMessage(url, data) {
 }
 
 
-
 var map = null;
 
 function initMap(lat, lng, i) {
@@ -29,9 +28,9 @@ function initMap(lat, lng, i) {
 $(function () {
     var i = 0
     var $list, $text_field;
-    $list = $('ul'); // sélectionne la liste à puce
-    $text_field = $('#text_field'); // sélectionne le formulaire
-    $text_field.on('submit', function (e) { //e = évenement
+    $list = $('ul'); 
+    $text_field = $('#text_field'); 
+    $text_field.on('submit', function (e) { 
         e.preventDefault();
         getMessage("/ajax", new FormData(text_field))
             .then(response => {
