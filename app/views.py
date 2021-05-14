@@ -18,7 +18,7 @@ def home():
 
 @app.route("/ajax", methods=["POST"])
 def send_answer():
-    """ 
+    """
     This method will catch the message of the user and send it to the
     python Parser class to clean the message and will send the result to the
     wikipedia API using the Request class. Finally, the result will be send
