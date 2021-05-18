@@ -1,4 +1,4 @@
-alert("Grandpy se fait vieux doucement...Il ne vous reconnait plus très bien, il vous prend pour une personne s'appelant 'Billy' et il vous appelera toujours 'fiston'... Soyez indulgent envers lui ;-)");
+alert("Grandpy se fait vieux doucement...Il ne vous reconnait plus très bien, il vous prend pour une personne s'appelant 'Billy' et il vous appellera toujours 'fiston'... Soyez indulgent envers lui ;-)");
 
 function getMessage(url, data) {
     return fetch(url, {
